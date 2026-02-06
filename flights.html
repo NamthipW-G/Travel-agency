@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="This page is subpage of destination page which is flight page  - for customers to book flight.">   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <!-- Subpage Quick Links Circle Buttons -->
+    <div class="subpage-circles" style="display:flex;gap:1.2em;justify-content:center;align-items:center;margin-top:6.5em;margin-bottom:1.5em;">
+        <a href="flights.html" title="Flights" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#2563eb;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-plane"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#2563eb;">Flights</span>
+        </a>
+        <a href="hotels.html" title="Hotels" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#22c55e;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-bed"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#22c55e;">Hotels</span>
+        </a>
+        <a href="flight-hotel.html" title="Flight + Hotel" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#f59e42;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-hotel"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#f59e42;">Flight+Hotel</span>
+        </a>
+        <a href="airport-transfers.html" title="Airport Transfers" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#10b981;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-shuttle-van"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#10b981;">Transfers</span>
+        </a>
+        <a href="car-rentals.html" title="Car Rentals" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#f43f5e;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-car"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#f43f5e;">Car Rentals</span>
+        </a>
+        <a href="insurance.html" title="Insurance" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#6366f1;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-shield-alt"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#6366f1;">Insurance</span>
+        </a>
+        <a href="public-transport.html" title="Public Transport" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#0ea5e9;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-bus"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#0ea5e9;">Transport</span>
+        </a>
+    </div>
+    <section class="quick-action-section">
+        <div class="container">
+            <div class="quick-action-header">
+                <i class="fas fa-plane quick-action-icon"></i>
+                <h1 style="margin-top:0.5em;">Flights</h1>
+                <p>Search and book flights to your favorite destinations. Compare airlines, prices, and schedules.</p>
+            </div>
+            
+            <!-- Flight Search Form  -->
+            <form id="flightSearchForm" class="quick-search-form flight-search-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="flight-from"><i class="fas fa-plane"></i> From</label>
+                        <input type="text" id="flight-from" name="from" placeholder="Departure city or airport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-to"><i class="fas fa-plane"></i> To</label>
+                        <input type="text" id="flight-to" name="to" placeholder="Arrival city or airport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-depart"><i class="fas fa-calendar"></i> Departure</label>
+                        <input type="date" id="flight-depart" name="depart" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-return"><i class="fas fa-calendar-check"></i> Return</label>
+                        <input type="date" id="flight-return" name="return">
+                    </div>
+                    <div class="form-group">
+                        <label for="flight-passengers"><i class="fas fa-user-friends"></i> Passengers</label>
+                        <input type="number" id="flight-passengers" name="passengers" min="1" max="10" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary flight-search-btn" style="margin-top: 1.8em;">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- Demo Flight Package Cards -->
+            <section class="flight-suggestions-demo" style="margin-top:3em;">
+                <h3 style="margin-bottom:1em;color:#2563eb;">Popular Flight Deals</h3>
+                <div class="flight-suggestions-slider" style="display:flex;overflow-x:auto;gap:1.5em;padding-bottom:1em;scrollbar-width:thin;">
+                <div class="flight-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                    <img src="images/flight1.jpg" alt="London to New York" style="width:100%;height:120px;object-fit:cover;border-radius:0.7em;margin-bottom:0.7em;">
+                    <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                        <strong style="font-size:1.1em;">London → New York</strong>
+                        <span style="background:#e0e7ff;color:#1e40af;padding:0.2em 0.7em;border-radius:0.7em;font-size:0.95em;">Direct</span>
+                    </div>
+                    <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">British Airways</div>
+                    <div style="margin-bottom:0.2em;">Flight time: 7h 45m</div>
+                    <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$650.00</span></div>
+                    <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                </div> 
+                    <div class="flight-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                        <img src="images/flight2.jpeg" alt="Paris to Tokyo" style="width:100%;height:120px;object-fit:cover;border-radius:0.7em;margin-bottom:0.7em;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                            <strong style="font-size:1.1em;">Paris → Tokyo</strong>
+                            <span style="background:#e0e7ff;color:#1e40af;padding:0.2em 0.7em;border-radius:0.7em;font-size:0.95em;">1 Stop</span>
+                        </div>
+                        <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">Air France</div>
+                        <div style="margin-bottom:0.2em;">Flight time: 14h 20m</div>
+                        <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$980.00</span></div>
+                        <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                    </div>
+                    <div class="flight-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                        <img src="images/flight3.jpg" alt="Sydney to Los Angeles" style="width:100%;height:120px;object-fit:cover;border-radius:0.7em;margin-bottom:0.7em;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                            <strong style="font-size:1.1em;">Sydney → Los Angeles</strong>
+                            <span style="background:#e0e7ff;color:#1e40af;padding:0.2em 0.7em;border-radius:0.7em;font-size:0.95em;">Direct</span>
+                        </div>
+                        <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">Qantas</div>
+                        <div style="margin-bottom:0.2em;">Flight time: 13h 30m</div>
+                        <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$1200.00</span></div>
+                        <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                    </div>
+                    <div class="flight-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                        <img src="images/flight4.jpeg" alt="Dubai to Cape Town" style="width:100%;height:120px;object-fit:cover;border-radius:0.7em;margin-bottom:0.7em;">
+                        <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                            <strong style="font-size:1.1em;">Dubai → Cape Town</strong>
+                            <span style="background:#e0e7ff;color:#1e40af;padding:0.2em 0.7em;border-radius:0.7em;font-size:0.95em;">1 Stop</span>
+                        </div>
+                        <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">Emirates</div>
+                        <div style="margin-bottom:0.2em;">Flight time: 11h 10m</div>
+                        <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$890.00</span></div>
+                        <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="footer">
+        <!-- ...existing code... -->
+    </footer>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing flights to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

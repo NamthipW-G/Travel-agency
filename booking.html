@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="This is booking pages - it's about booking summary all item customer choose.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Dark mode for .destination-search-section */
+    :root[data-theme='dark'] .destination-search-section,
+    body.dark-mode .destination-search-section {
+      background: #181c24 !important;
+      color: #4c4e51 !important;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 16px 0 #0004;
+    }
+    :root[data-theme='dark'] .destination-search-section input,
+    :root[data-theme='dark'] .destination-search-section select,
+    :root[data-theme='dark'] .destination-search-section .search-bar,
+    body.dark-mode .destination-search-section input,
+    body.dark-mode .destination-search-section select,
+    body.dark-mode .destination-search-section .search-bar {
+      background: #232837 !important;
+      color: #f3f4f6 !important;
+      border: 1px solid #333a4d;
+    }
+    :root[data-theme='dark'] .destination-search-section label,
+    body.dark-mode .destination-search-section label {
+      color: #e5e7eb !important;
+    }
+    :root[data-theme='dark'] .destination-search-section .search-btn,
+    body.dark-mode .destination-search-section .search-btn {
+      background: #2563eb !important;
+      color: #fff !important;
+      border: none;
+    }
+    :root[data-theme='dark'] .destination-search-section .search-btn:hover,
+    body.dark-mode .destination-search-section .search-btn:hover {
+      background: #1e40af !important;
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Booking Progress -->
+                <div class="booking-progress">
+                    <div class="progress-step active">
+                        <div class="step-number">1</div>
+                        <span>Package Details</span>
+                    </div>
+                    <div class="progress-step active">
+                        <div class="step-number">2</div>
+                        <span>Traveler Info</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">4</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+
+                <div class="booking-content">
+                    <!-- Booking Form -->
+                    <div class="booking-form-container">
+                        <h1>Complete Your Booking</h1>
+                        
+<!-- Package Summary -->
+                        <!-- Package Summary (Dynamic, aligns with Cart) -->
+                        <div class="package-summary" id="packageSummary">
+                        <div id="bookingSummaryItems"></div>
+                        </div>
+
+
+                        <!-- Booking Form -->
+                        <form class="booking-form" id="bookingForm">
+                            <!-- Travel Dates -->
+                            <div class="form-section">
+                                <h3>Travel Dates</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="departureDate">Departure Date</label>
+                                        <div class="input-group">
+                                            <!-- <i class="fas fa-calendar"></i> -->
+                                            <input type="date" id="departureDate" name="departureDate" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="returnDate">Return Date</label>
+                                        <div class="input-group">
+                                            <!-- <i class="fas fa-calendar"></i> -->
+                                            <input type="date" id="returnDate" name="returnDate" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Primary Traveler Information -->
+                            <div class="form-section">
+                                <h3>Primary Traveler Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="dateOfBirth">Date of Birth</label>
+                                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nationality">Nationality</label>
+                                        <select id="nationality" name="nationality" required>
+                                            <option value="">Select nationality</option>
+                                            <option value="US">United States</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="FR">France</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Special Requests -->
+                            <div class="form-section">
+                                <h3>Special Requests</h3>
+                                <div class="form-group">
+                                    <label for="specialRequests">Special Requests or Dietary Requirements</label>
+                                    <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Please let us know about any special requirements, dietary restrictions, accessibility needs, or celebration occasions..."></textarea>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="travelInsurance" name="travelInsurance">
+                                        <span class="checkmark"></span>
+                                        Add Travel Insurance (+$99 per person)
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="airportTransfer" name="airportTransfer">
+                                        <span class="checkmark"></span>
+                                        Add Airport Transfer (+$75 per person)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-section">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="terms" name="terms" required>
+                                        <span class="checkmark"></span>
+                                        I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="privacy-link">Privacy Policy</a>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                        <span class="checkmark"></span>
+                                        Subscribe to our newsletter for travel updates and exclusive offers
+                                    </label>
+                                </div>
+
+                                                            <!-- Travelers -->
+                            <div class="form-section">
+                                <h3>Number of Travelers</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="adults">Adults (18+)</label>
+                                        <div class="quantity-selector">
+                                            <button type="button" class="qty-btn minus" data-target="adults">-</button>
+                                            <input type="number" id="adults" name="adults" value="0" min="1" max="10">
+                                            <button type="button" class="qty-btn plus" data-target="adults">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="children">Children (2-17)</label>
+                                        <div class="quantity-selector">
+                                            <button type="button" class="qty-btn minus" data-target="children">-</button>
+                                            <input type="number" id="children" name="children" value="0" min="0" max="10">
+                                            <button type="button" class="qty-btn plus" data-target="children">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="infants">Infants (0-2)</label>
+                                        <div class="quantity-selector">
+                                            <button type="button" class="qty-btn minus" data-target="infants">-</button>
+                                            <input type="number" id="infants" name="infants" value="0" min="0" max="5">
+                                            <button type="button" class="qty-btn plus" data-target="infants">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <button type="button" id="confirmBookingBtn" class="btn-primary" style="width: 100%;">
+                        <i class="fas fa-check"></i> Confirm
+                    </button>
+                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Booking Summary -->
+                    <div class="booking-summary">
+                        <div class="summary-card">
+                            <h3>Booking Summary</h3>
+                            <!-- Dynamic Booking Summary from Cart -->
+                            <div id="userBookingDetails"></div>
+                            <div class="summary-item">
+                                <span>Package Price</span>
+                                <span id="packagePrice">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Children</span>
+                                <span id="childrenPrice">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Travel Insurance</span>
+                                <span id="insuranceCost">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Airport Transfer</span>
+                                <span id="transferCost">$0</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item subtotal">
+                                <span>Subtotal</span>
+                                <span id="subtotal">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Taxes & Fees</span>
+                                <span id="taxes">$0</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item total">
+                                <span>Total Amount</span>
+                                <span id="totalAmount">$0</span>
+                            </div>
+                            
+                            <div class="payment-info">
+                                <p><i class="fas fa-info-circle"></i> Secure payment processing</p>
+                                <p><i class="fas fa-shield-alt"></i> 100% money-back guarantee</p>
+                                <p><i class="fas fa-phone"></i> 24/7 customer support</p>
+                            </div>
+                            
+                            <a href="payment.html" class="btn-primary booking-btn" id="proceedToPaymentBtn" style="display: flex; align-items: center; justify-content: center; width: 100%;">
+                                <i class="fas fa-credit-card"></i>
+                                <span style="margin-left: 0.5em;">Proceed to Payment</span>
+                            </a>
+                            
+                            <div class="payment-methods">
+                                <p>We accept:</p>
+                                <div class="payment-icons">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                    <i class="fab fa-cc-paypal"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-compass"></i>
+                        <span>Journii</span>
+                    </div>
+                    <p>Your gateway to extraordinary travel experiences around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">Booking Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@journii.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Journii Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing travel packages to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>

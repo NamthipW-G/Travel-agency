@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content=" About us: Discover the story behind Journii Travel company / a team of passionate explorers creating unforgettable travel experiences since 2015. Learn about company values, mission, and award-winning service.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Journii</h1>
+                <p>Crafting extraordinary travel experiences since 2015</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2015 by a group of passionate travelers, Journii was born from a simple belief: that travel has the power to transform lives, broaden perspectives, and create lasting memories.</p>
+                    
+                    <p>What started as a small team of travel enthusiasts has grown into a global community of explorers, local guides, and adventure seekers. We've helped over 50,000 travelers discover the world's most incredible destinations, from hidden gems to iconic landmarks.</p>
+                    
+                    <p>Our mission remains unchanged: to make extraordinary travel accessible to everyone, while supporting local communities and preserving the natural beauty of our planet.</p>
+                    
+                    <div class="story-stats">
+                        <div class="stat">
+                            <h3>50,000+</h3>
+                            <p>Happy Travelers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>150+</h3>
+                            <p>Destinations</p>
+                        </div>
+                        <div class="stat">
+                            <h3>9 Years</h3>
+                            <p>Of Excellence</p>
+                        </div>
+                        <div class="stat">
+                            <h3>4.9/5</h3>
+                            <p>Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Story">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="our-values">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion for Travel</h3>
+                    <p>We live and breathe travel. Our team's genuine passion for exploration drives us to create exceptional experiences for every traveler.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community First</h3>
+                    <p>We believe in supporting local communities and ensuring that tourism benefits the places and people we visit.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Tourism</h3>
+                    <p>We're committed to responsible travel practices that protect our planet's natural beauty for future generations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for perfection in every detail, from planning to execution, ensuring unforgettable travel experiences.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trust & Transparency</h3>
+                    <p>We build lasting relationships through honest communication, fair pricing, and reliable service.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We continuously evolve and embrace new technologies to enhance the travel experience for our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="our-team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The passionate people behind your extraordinary journeys</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/Namthip.jpg" alt="Namthip Wannakajeepiboon">
+                    </div>
+                    <div class="team-info">
+                        <h3>Namthip Wannakajeepiboon</h3>
+                        <p class="team-role">Founder & CEO</p>
+                        <p class="team-bio">A world traveler who has visited 80+ countries and believes in the transformative power of travel.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/Sirishanya.jpg" alt="Sirishanya Kamsuwan">
+                    </div>
+                    <div class="team-info">
+                        <h3>Sirishanya Kamsuwan</h3>
+                        <p class="team-role">Head of Operations</p>
+                        <p class="team-bio">Expert in logistics and operations with 15 years of experience in the travel industry.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/Aun.jpg" alt="Aun Chimpalee">
+                    </div>
+                    <div class="team-info">
+                        <h3>Aun Chimpalee</h3>
+                        <p class="team-role">Customer Experience Director</p>
+                        <p class="team-bio">Passionate about creating memorable experiences and ensuring every traveler's journey is perfect.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/rata.jpg" alt="Rata Chulinthorn">
+                    </div>
+                    <div class="team-info">
+                        <h3>Rata Chulinthorn</h3>
+                        <p class="team-role">Head of Partnerships</p>
+                        <p class="team-bio">Builds relationships with local partners worldwide to ensure authentic and sustainable travel experiences.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="awards">
+        <div class="container">
+            <div class="section-header">
+                <h2>Awards & Recognition</h2>
+                <p>Honored to be recognized by the travel industry</p>
+            </div>
+            
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Best Travel Agency 2023</h3>
+                    <p>Travel Excellence Awards</p>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Customer Choice Award</h3>
+                    <p>TripAdvisor Travelers' Choice</p>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>5-Star Service Rating</h3>
+                    <p>Trustpilot Excellence</p>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Tourism Leader</h3>
+                    <p>Green Travel Association</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Join thousands of satisfied travelers who have discovered the world with Journii</p>
+                <div class="cta-buttons">
+                    <a href="packages.html" class="btn-primary">Explore Packages</a>
+                    <a href="contact.html" class="btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-compass"></i>
+                        <span>Journii</span>
+                    </div>
+                    <p>Your gateway to extraordinary travel experiences around the world.</p>
+            <div class="social-links">
+                <a href="#">
+                    <span class="circle-icon"><i class="fab fa-facebook"></i></span>
+                    <span>Facebook</span>
+                </a>
+                <a href="#">
+                    <span class="circle-icon"><i class="fab fa-instagram"></i></span>
+                    <span>Instagram</span>
+                </a>
+                <a href="#">
+                    <span class="circle-icon"><i class="fab fa-twitter"></i></span>
+                    <span>Twitter</span>
+                </a>
+                <a href="#">
+                    <span class="circle-icon"><i class="fab fa-youtube"></i></span>
+                    <span>YouTube</span>
+                </a>
+            </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">Booking Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@journii.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Journii Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing travel packages to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

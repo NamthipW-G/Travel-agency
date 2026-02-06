@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="This page is destination page  - for customer to explore travel destinations around the world. Plan trip and booking all in one service like hotel / flight / car rentals etc.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Destination Search & Quick Actions (NEW) -->
+    <section class="destination-search-section">
+        <div class="container">
+            
+            <div class="quick-actions">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="hotels.html" title="Hotels"><i class="fas fa-hotel"></i></a>
+                    <span class="quick-action-label">Hotels</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="flights.html" title="Flights"><i class="fas fa-plane"></i></a>
+                    <span class="quick-action-label">Flights</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="flight-hotel.html" title="Flight + Hotel"><i class="fas fa-suitcase-rolling"></i></a>
+                    <span class="quick-action-label">Flight + Hotel</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="public-transport.html" title="Public Transport"><i class="fas fa-bus"></i></a>
+                    <span class="quick-action-label">Public Transport</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="car-rentals.html" title="Car Rentals"><i class="fas fa-car"></i></a>
+                    <span class="quick-action-label">Car Rentals</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="airport-transfers.html" title="Airport Transfers"><i class="fas fa-shuttle-van"></i></a>
+                    <span class="quick-action-label">Airport Transfers</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a class="quick-action-btn circle" href="insurance.html" title="Insurance"><i class="fas fa-shield-alt"></i></a>
+                    <span class="quick-action-label">Insurance</span>
+                </div>
+            </div>
+            <form class="destination-search-form" id="destinationSearchForm">
+                <div class="form-group">
+                    <label for="likeDestination"><i class="fas fa-map-marker-alt"></i> Destination</label>
+                    <input type="text" id="likeDestination" name="likeDestination" placeholder="Where do you want to go?" required>
+                </div>
+                <div class="form-group">
+                    <label for="startDate"><i class="fas fa-calendar-day"></i> Start Date</label>
+                    <input type="date" id="startDate" name="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="endDate"><i class="fas fa-calendar-check"></i> End Date</label>
+                    <input type="date" id="endDate" name="endDate" required>
+                </div>
+                <div class="form-group search-btn-group">
+                    <button type="submit" class="btn-primary"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="destinations-hero">
+        <div class="nature-bg">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Explore Amazing Destinations</h1>
+                    <p>Discover breathtaking places around the world and create unforgettable memories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="continent">Continent</label>
+                    <select id="continent" class="filter-select">
+                        <option value="">All Continents</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europe</option>
+                        <option value="africa">Africa</option>
+                        <option value="america">America</option>
+                        <option value="oceania">Oceania</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" class="filter-select">
+                        <option value="">Any Budget</option>
+                        <option value="budget">Budget ($0-$1000)</option>
+                        <option value="mid">Mid-range ($1000-$3000)</option>
+                        <option value="luxury">Luxury ($3000+)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="activity">Activity Type</label>
+                    <select id="activity" class="filter-select">
+                        <option value="">All Activities</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="culture">Culture</option>
+                        <option value="relaxation">Relaxation</option>
+                        <option value="wildlife">Wildlife</option>
+                    </select>
+                </div>
+                
+                <button class="btn-primary filter-btn">
+                    <i class="fas fa-search"></i>
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Grid -->
+    <section class="destinations-grid">
+        <div class="container">
+            <div class="destinations-container">
+                <!-- Destination Card 1 -->
+                <div class="destination-card" data-continent="asia" data-budget="mid" data-activity="culture">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Santorini, Greece">
+                        <div class="destination-overlay">
+                            <div class="destination-price">From $1,299</div>
+                            <div class="destination-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Santorini, Greece</h3>
+                        <p class="destination-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Cyclades, Greece
+                        </p>
+                        <p class="destination-description">Experience the magic of white-washed buildings and stunning sunsets over the Aegean Sea.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag">Culture</span>
+                            <span class="feature-tag">Romance</span>
+                            <span class="feature-tag">Photography</span>
+                        </div>
+                        <a href="packages.html" class="btn-primary">View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Destination Card 2 -->
+                <div class="destination-card" data-continent="asia" data-budget="budget" data-activity="culture">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kyoto, Japan">
+                        <div class="destination-overlay">
+                            <div class="destination-price">From $899</div>
+                            <div class="destination-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Kyoto, Japan</h3>
+                        <p class="destination-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kansai, Japan
+                        </p>
+                        <p class="destination-description">Immerse yourself in traditional Japanese culture with ancient temples and beautiful gardens.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag">Culture</span>
+                            <span class="feature-tag">History</span>
+                            <span class="feature-tag">Temples</span>
+                        </div>
+                        <a href="packages.html" class="btn-primary">View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Destination Card 3 -->
+                <div class="destination-card" data-continent="africa" data-budget="luxury" data-activity="wildlife">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Serengeti, Tanzania">
+                        <div class="destination-overlay">
+                            <div class="destination-price">From $2,499</div>
+                            <div class="destination-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Serengeti, Tanzania</h3>
+                        <p class="destination-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Northern Tanzania
+                        </p>
+                        <p class="destination-description">Witness the Great Migration and experience Africa's most spectacular wildlife safari.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag">Wildlife</span>
+                            <span class="feature-tag">Safari</span>
+                            <span class="feature-tag">Adventure</span>
+                        </div>
+                        <a href="packages.html" class="btn-primary">View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Destination Card 4 -->
+                <div class="destination-card" data-continent="america" data-budget="mid" data-activity="adventure">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machu Picchu, Peru">
+                        <div class="destination-overlay">
+                            <div class="destination-price">From $1,599</div>
+                            <div class="destination-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Machu Picchu, Peru</h3>
+                        <p class="destination-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Cusco Region, Peru
+                        </p>
+                        <p class="destination-description">Trek to the ancient Incan citadel and discover one of the world's most mysterious archaeological sites.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag">Adventure</span>
+                            <span class="feature-tag">History</span>
+                            <span class="feature-tag">Hiking</span>
+                        </div>
+                        <a href="packages.html" class="btn-primary">View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Destination Card 5 -->
+                <div class="destination-card" data-continent="oceania" data-budget="luxury" data-activity="relaxation">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bora Bora, French Polynesia">
+                        <div class="destination-overlay">
+                            <div class="destination-price">From $3,299</div>
+                            <div class="destination-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Bora Bora, French Polynesia</h3>
+                        <p class="destination-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Society Islands, French Polynesia
+                        </p>
+                        <p class="destination-description">Relax in overwater bungalows surrounded by crystal-clear lagoons and pristine coral reefs.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag">Luxury</span>
+                            <span class="feature-tag">Romance</span>
+                            <span class="feature-tag">Beach</span>
+                        </div>
+                        <a href="packages.html" class="btn-primary">View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Destination Card 6 -->
+                <div class="destination-card" data-continent="europe" data-budget="mid" data-activity="culture">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1520986606214-8b456906c813?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Iceland">
+                        <div class="destination-overlay">
+                            <div class="destination-price">From $1,799</div>
+                            <div class="destination-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Iceland</h3>
+                        <p class="destination-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Nordic Island
+                        </p>
+                        <p class="destination-description">Explore dramatic landscapes, geysers, waterfalls, and the magical Northern Lights.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag">Nature</span>
+                            <span class="feature-tag">Adventure</span>
+                            <span class="feature-tag">Northern Lights</span>
+                        </div>
+                        <a href="packages.html" class="btn-primary">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get the latest travel deals and destination guides delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-compass"></i>
+                        <span>Journii</span>
+                    </div>
+                    <p>Your gateway to extraordinary travel experiences around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">Booking Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@journii.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Journii Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing travel packages to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+   
+ 
+</body>
+</html>

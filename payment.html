@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="This page is payment page  - for customers to complete their payment for travel bookings.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (reuse from booking.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Booking Progress -->
+                <div class="booking-progress">
+                    <div class="progress-step active">
+                        <div class="step-number">1</div>
+                        <span>Package Details</span>
+                    </div>
+                    <div class="progress-step active">
+                        <div class="step-number">2</div>
+                        <span>Traveler Info</span>
+                    </div>
+                    <div class="progress-step active">
+                        <div class="step-number">3</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">4</div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+                <div class="booking-content">
+                    <!-- Payment Form -->
+                    <div class="payment-form-container">
+                        <h1>Payment</h1>
+                        <form class="payment-form" id="paymentForm">
+                            <div class="form-section">
+                                <h3>Choose Payment Method</h3>
+                                <div class="payment-method-options">
+                                    <label class="payment-method-label">
+                                        <input type="radio" name="paymentMethod" value="card" checked>
+                                        <i class="fas fa-credit-card"></i> Credit/Debit Card
+                                    </label>
+                                    <label class="payment-method-label">
+                                        <input type="radio" name="paymentMethod" value="paypal">
+                                        <i class="fab fa-paypal"></i> PayPal
+                                    </label>
+                                    <label class="payment-method-label">
+                                        <input type="radio" name="paymentMethod" value="applepay">
+                                        <i class="fab fa-apple-pay"></i> Apple Pay
+                                    </label>
+                                    <label class="payment-method-label">
+                                        <input type="radio" name="paymentMethod" value="googlepay">
+                                        <i class="fab fa-google-pay"></i> Google Pay
+                                    </label>
+                                    <label class="payment-method-label">
+                                        <input type="radio" name="paymentMethod" value="bank">
+                                        <i class="fas fa-university"></i> Bank Transfer
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-section card-section">
+                                <h3>Card Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cardName">Name on Card</label>
+                                        <input type="text" id="cardName" name="cardName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Number</label>
+                                        <input type="text" id="cardNumber" name="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" required pattern="[0-9 ]{13,19}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry">Expiry Date</label>
+                                        <input type="text" id="expiry" name="expiry" maxlength="5" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvc">CVC</label>
+                                        <input type="text" id="cvc" name="cvc" maxlength="4" placeholder="123" required pattern="\d{3,4}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-section paypal-section" style="display:none;">
+                                <h3>Pay with PayPal</h3>
+                                <p>After clicking Pay Now, you will be redirected to PayPal to complete your purchase securely.</p>
+                            </div>
+                            <div class="form-section applepay-section" style="display:none;">
+                                <h3>Apple Pay</h3>
+                                <p>Click Pay Now to use Apple Pay on supported devices.</p>
+                            </div>
+                            <div class="form-section googlepay-section" style="display:none;">
+                                <h3>Google Pay</h3>
+                                <p>Click Pay Now to use Google Pay on supported devices.</p>
+                            </div>
+                            <div class="form-section bank-section" style="display:none;">
+                                <h3>Bank Transfer</h3>
+                                <p>After clicking Pay Now, you will receive our bank details to complete your transfer.</p>
+                            </div>
+                            <div class="form-section">
+                                <button type="submit" class="btn-primary pay-btn" style="width:100%;font-size:1.2rem;">
+                                    <i class="fas fa-lock"></i> Pay Now
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Booking Summary (reuse from booking.html) -->
+                    <div class="booking-summary">
+                        <div class="summary-card">
+                            <h3>Booking Summary</h3>
+                            <div id="userBookingDetails"></div>
+                            <div class="summary-item">
+                                <span>Package Price</span>
+                                <span id="packagePrice">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Children</span>
+                                <span id="childrenPrice">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Travel Insurance</span>
+                                <span id="insuranceCost">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Airport Transfer</span>
+                                <span id="transferCost">$0</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item subtotal">
+                                <span>Subtotal</span>
+                                <span id="subtotal">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Taxes & Fees</span>
+                                <span id="taxes">$0</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-item total">
+                                <span>Total Amount</span>
+                                <span id="totalAmount">$0</span>
+                            </div>
+                            <div class="payment-info">
+                                <p><i class="fas fa-info-circle"></i> Secure payment processing</p>
+                                <p><i class="fas fa-shield-alt"></i> 100% money-back guarantee</p>
+                                <p><i class="fas fa-phone"></i> 24/7 customer support</p>
+                            </div>
+                            <div class="payment-methods">
+                                <p>We accept:</p>
+                                <div class="payment-icons">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                    <i class="fab fa-cc-paypal"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer (reuse from booking.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-compass"></i>
+                        <span>Journii</span>
+                    </div>
+                    <p>Your gateway to extraordinary travel experiences around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">Booking Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@journii.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Journii Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+        <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing travel packages to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

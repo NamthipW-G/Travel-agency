@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="This is subpage of Destination pages - about booking function for airport transfers.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Transfers - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <!-- Subpage Quick Links Circle Buttons -->
+    <div class="subpage-circles" style="display:flex;gap:1.2em;justify-content:center;align-items:center;margin-top:6.5em;margin-bottom:1.5em;">
+        <a href="flights.html" title="Flights" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#2563eb;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-plane"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#2563eb;">Flights</span>
+        </a>
+        <a href="hotels.html" title="Hotels" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#22c55e;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-bed"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#22c55e;">Hotels</span>
+        </a>
+        <a href="flight-hotel.html" title="Flight + Hotel" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#f59e42;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-hotel"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#f59e42;">Flight+Hotel</span>
+        </a>
+        <a href="airport-transfers.html" title="Airport Transfers" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#10b981;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-shuttle-van"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#10b981;">Transfers</span>
+        </a>
+        <a href="car-rentals.html" title="Car Rentals" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#f43f5e;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-car"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#f43f5e;">Car Rentals</span>
+        </a>
+        <a href="insurance.html" title="Insurance" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#6366f1;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-shield-alt"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#6366f1;">Insurance</span>
+        </a>
+        <a href="public-transport.html" title="Public Transport" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;">
+            <span style="display:flex;justify-content:center;align-items:center;width:54px;height:54px;background:#0ea5e9;color:#fff;border-radius:50%;font-size:1.5em;box-shadow:0 2px 8px #0002;"><i class="fas fa-bus"></i></span>
+            <span style="font-size:0.95em;margin-top:0.3em;color:#0ea5e9;">Transport</span>
+        </a>
+    </div>
+    <section class="quick-action-section">
+        <div class="container">
+            <div class="quick-action-header hotel-hero-header">
+                <div class="hotel-hero-icon-wrap">
+                    <i class="fas fa-shuttle-van quick-action-icon"></i>
+                </div>
+                <h1 class="hotel-hero-title">Airport Transfers</h1>
+                <p class="hotel-hero-desc">Book convenient airport transfers to and from your hotel or destination.</p>
+            </div>
+            <!-- Airport Transfer Search Form -->
+            <form id="transferSearchForm" class="quick-search-form hotel-search-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="transfer-from"><i class="fas fa-plane-arrival"></i> From</label>
+                        <input type="text" id="transfer-from" name="from" placeholder="Airport or pickup location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transfer-to"><i class="fas fa-map-marker-alt"></i> To</label>
+                        <input type="text" id="transfer-to" name="to" placeholder="Hotel or drop-off location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transfer-date"><i class="fas fa-calendar"></i> Date</label>
+                        <input type="date" id="transfer-date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transfer-passengers"><i class="fas fa-user-friends"></i> Passengers</label>
+                        <input type="number" id="transfer-passengers" name="passengers" min="1" max="10" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary hotel-search-btn" style="margin-top: 1.8em;">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div id="transfer-search-results" class="search-results-list hotel-search-results" style="margin-top:2em;"></div>
+            <!-- Static Airport Transfer Suggestion Cards (HTML only, for design/demo) -->
+            <section class="hotel-suggestions-demo" style="margin-top:3em;">
+              <h3 style="margin-bottom:1em;color:#2563eb;">Popular Airport Transfers</h3>
+              <div class="hotel-suggestions-slider" style="display:flex;overflow-x:auto;gap:1.5em;padding-bottom:1em;scrollbar-width:thin;">
+                <div class="hotel-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                  <img src="images/JFK.png" alt="JFK Airport to Manhattan Hotel" style="width:100%;height:140px;object-fit:cover;border-radius:0.7em;box-shadow:0 2px 8px #0002;margin-bottom:0.7em;">
+                  <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                    <strong style="font-size:1.1em;">JFK Airport → Manhattan Hotel</strong>
+                  </div>
+                  <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">Private Sedan</div>
+                  <div style="margin-bottom:0.2em;">1-3 passengers</div>
+                  <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$75.00</span></div>
+                  <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                </div>
+                <div class="hotel-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                  <img src="images/Heathrow.jpeg" alt="Heathrow to London City Center" style="width:100%;height:140px;object-fit:cover;border-radius:0.7em;box-shadow:0 2px 8px #0002;margin-bottom:0.7em;">
+                  <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                    <strong style="font-size:1.1em;">Heathrow → London City Center</strong>
+                  </div>
+                  <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">Shared Shuttle</div>
+                  <div style="margin-bottom:0.2em;">1-6 passengers</div>
+                  <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$40.00</span></div>
+                  <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                </div>
+                <div class="hotel-suggestion-card" style="background:#fff;border-radius:1em;box-shadow:0 2px 12px #0001;padding:1em;min-width:320px;max-width:340px;flex:0 0 320px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.5em;">
+                  <img src="images/Changi.jpg" alt="Changi Airport to Marina Bay Sands" style="width:100%;height:140px;object-fit:cover;border-radius:0.7em;box-shadow:0 2px 8px #0002;margin-bottom:0.7em;">
+                  <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.3em;">
+                    <strong style="font-size:1.1em;">Changi Airport → Marina Bay Sands</strong>
+                  </div>
+                  <div style="color:#888;font-size:0.95em;margin-bottom:0.2em;">Luxury Van</div>
+                  <div style="margin-bottom:0.2em;">1-5 passengers</div>
+                  <div style="margin-bottom:0.2em;">Price: <span style="color:#16a34a;font-weight:600;">$120.00</span></div>
+                  <button class="btn-primary" style="margin-top:auto;align-self:stretch;">Book Now</button>
+                </div>
+              </div>
+            </section>
+        </div>
+    </section>
+    <footer class="footer">
+        <!-- ...existing code... -->
+    </footer>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing airport transfers to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

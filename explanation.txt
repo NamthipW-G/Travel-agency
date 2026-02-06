@@ -1,0 +1,13 @@
+This website is about travel agency called Journii. This company provided all in one services like flight/ hotel / public transport / car rentals / airport transfer / insurance. Also, We provided travel package for many customer target group cush as back packer, family etc.
+
+There are 5 main page including
+1. Home page (index.html) : designed to serve as the landing page for customers to discover the brand, explore travel destinations, view travel packages, know some review from our customer and Begin booking or contact the team.
+2. Destination page (destinations.html): This page is designed to help users explore global travel destinations, apply filters like budget or activity type, and quickly navigate to related services like flights, hotels, and rentals. It also allows users to search, view packages, and subscribe to updates — all in one place. There're 8 subpages including hotels, flights, hotel + flight, public transport, car rentals, air port transfer and insurance (all subpages are for booking espectially topic)
+3. Package (packages.html) : This page is package page it's provid travel packages that users can explore and book. 
+4. About (about.html) : This page is about us page, It provides information about the company, its mission, team, values, awards, and ways to connect or interact with it.
+5. Contact (contact.html) : This page is contact us page, designed to help visitors get in touch with the company, ask questions, send messages, or find contact info.
+
+
+Note 1 :  There's some coding have been commented out (/*---*/) intentionally, as they might be useful in the future or are under consideration for reuse.
+Note 2 : There's all respondsive
+Note 3 : Some of JavaScript and CSS components were updated concurrently to reflect the same functionality and design changes, helping to keep track of which parts were already adjusted.

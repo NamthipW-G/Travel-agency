@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="This page is package page  - for customers to explore and book travel packages.">   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages - Journii Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-compass"></i>
+                    <span>Journii</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link active">Packages</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn-secondary">Login</a>
+                <a href="signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="packages-hero">
+        <!-- Slideshow Background -->
+        <div class="packages-hero-slideshow"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Travel Packages</h1>
+                <p>Carefully curated travel experiences with everything included</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Categories
+    <section class="package-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card active" data-category="all">
+                    <i class="fas fa-globe"></i>
+                    <h3>All Packages</h3>
+                </div>
+                <div class="category-card" data-category="adventure">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Adventure</h3>
+                </div>
+                <div class="category-card" data-category="luxury">
+                    <i class="fas fa-crown"></i>
+                    <h3>Luxury</h3>
+                </div>
+                <div class="category-card" data-category="family">
+                    <i class="fas fa-users"></i>
+                    <h3>Family</h3>
+                </div>
+                <div class="category-card" data-category="romantic">
+                    <i class="fas fa-heart"></i>
+                    <h3>Romantic</h3>
+                </div>
+                <div class="category-card" data-category="cultural">
+                    <i class="fas fa-landmark"></i>
+                    <h3>Cultural</h3>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Packages Grid -->
+    <section class="packages-grid">
+        <div class="container">
+            <div class="packages-container">
+                <!-- Package Card 1 -->
+                <div class="package-card" data-category="luxury romantic">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Santorini Luxury Package">
+                        <div class="package-badge">Best Seller</div>
+                        <div class="package-duration">7 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Santorini Luxury Escape</h3>
+                            <div class="package-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.9)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="package-description">Experience the magic of Santorini with luxury accommodations, private tours, and romantic dinners.</p>
+                        
+                        <div class="package-features">
+                            <div class="feature">
+                                <i class="fas fa-hotel"></i>
+                                <span>5-Star Resort</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>All Meals Included</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-car"></i>
+                                <span>Private Transfers</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Personal Guide</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <span class="original-price">$2,499</span>
+                            <span class="current-price">$1,999</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        
+                        <div class="package-actions">
+                            <!-- <button class="btn-secondary package-details-btn">View Details</button> -->
+                            <a href="booking.html" class="btn-primary book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 2 -->
+                <div class="package-card" data-category="adventure">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machu Picchu Adventure">
+                        <div class="package-badge">Adventure</div>
+                        <div class="package-duration">10 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Machu Picchu Adventure Trek</h3>
+                            <div class="package-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.8)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="package-description">Trek the legendary Inca Trail to Machu Picchu with expert guides and camping under the stars.</p>
+                        
+                        <div class="package-features">
+                            <div class="feature">
+                                <i class="fas fa-hiking"></i>
+                                <span>Guided Trekking</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-campground"></i>
+                                <span>Camping Equipment</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>All Meals</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-certificate"></i>
+                                <span>Permits Included</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <span class="current-price">$1,599</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        
+                        <div class="package-actions">
+                            <!-- <button class="btn-secondary package-details-btn">View Details</button> -->
+                            <a href="booking.html" class="btn-primary book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 3 -->
+                <div class="package-card" data-category="family">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Japan Family Tour">
+                        <div class="package-badge">Family Friendly</div>
+                        <div class="package-duration">12 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Japan Family Discovery</h3>
+                            <div class="package-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.9)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="package-description">Perfect family adventure through Japan's culture, technology, and natural beauty with kid-friendly activities.</p>
+                        
+                        <div class="package-features">
+                            <div class="feature">
+                                <i class="fas fa-child"></i>
+                                <span>Kid-Friendly Tours</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-train"></i>
+                                <span>JR Pass Included</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-home"></i>
+                                <span>Family Rooms</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-language"></i>
+                                <span>English Guide</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <span class="current-price">$2,299</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        
+                        <div class="package-actions">
+                            <!-- <button class="btn-secondary package-details-btn">View Details</button> -->
+                            <a href="booking.html" class="btn-primary book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 4 -->
+                <div class="package-card" data-category="luxury">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bora Bora Luxury">
+                        <div class="package-badge">Ultra Luxury</div>
+                        <div class="package-duration">8 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Bora Bora Paradise Retreat</h3>
+                            <div class="package-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(5.0)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="package-description">Ultimate luxury in overwater bungalows with private beaches, spa treatments, and gourmet dining.</p>
+                        
+                        <div class="package-features">
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Overwater Villa</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-spa"></i>
+                                <span>Spa Treatments</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-cocktail"></i>
+                                <span>All-Inclusive</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-helicopter"></i>
+                                <span>Helicopter Tours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <span class="original-price">$4,999</span>
+                            <span class="current-price">$3,999</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        
+                        <div class="package-actions">
+                            <!-- <button class="btn-secondary package-details-btn">View Details</button> -->
+                            <a href="booking.html" class="btn-primary book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 5 -->
+                <div class="package-card" data-category="cultural">
+                    <div class="package-image">
+                        <img src="https://www.billingschamber.com/media/Entrance-of-Luxor-Temple-Egypt-iStock-175526084.jpg" alt="Egypt Cultural Tour">
+                        <div class="package-badge">Cultural</div>
+                        <div class="package-duration">9 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Ancient Egypt Explorer</h3>
+                            <div class="package-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.7)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="package-description">Journey through ancient Egypt's wonders including pyramids, temples, and a Nile River cruise.</p>
+                        
+                        <div class="package-features">
+                            <div class="feature">
+                                <i class="fas fa-ship"></i>
+                                <span>Nile Cruise</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-monument"></i>
+                                <span>Pyramid Tours</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Egyptologist Guide</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-camera"></i>
+                                <span>Photo Permits</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <span class="current-price">$1,899</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        
+                        <div class="package-actions">
+                            <!-- <button class="btn-secondary package-details-btn">View Details</button> -->
+                            <a href="booking.html" class="btn-primary book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 6 -->
+                <div class="package-card" data-category="romantic">
+                    <div class="package-image">
+                        <img src="https://cdn-imgix.headout.com/mircobrands-content/image/b46c2cddd460b9076d91b9b385aa4983-What%20makes%20Paris%20the%20perfect%20romantic%20getaway.jpg" alt="Paris Romance">
+                        <div class="package-badge">Romantic</div>
+                        <div class="package-duration">6 Days</div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header">
+                            <h3>Paris Romance Package</h3>
+                            <div class="package-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(4.8)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="package-description">Fall in love with Paris through romantic dinners, Seine cruises, and intimate city tours.</p>
+                        
+                        <div class="package-features">
+                            <div class="feature">
+                                <i class="fas fa-wine-glass"></i>
+                                <span>Wine Tastings</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-ship"></i>
+                                <span>Seine Cruise</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart"></i>
+                                <span>Couples Spa</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-utensils"></i>
+                                <span>Fine Dining</span>
+                            </div>
+                        </div>
+                        
+                        <div class="package-price">
+                            <span class="current-price">$1,699</span>
+                            <span class="price-note">per person</span>
+                        </div>
+                        
+                        <div class="package-actions">
+                            <!-- <button class="btn-secondary package-details-btn">View Details</button> -->
+                            <a href="booking.html" class="btn-primary book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Packages -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Packages?</h2>
+                <p>We create unforgettable experiences with attention to every detail</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Secure Booking</h3>
+                    <p>Your payments are protected with bank-level security and full refund guarantee.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our travel experts are available around the clock to assist you during your journey.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Award-Winning Service</h3>
+                    <p>Recognized globally for exceptional service and customer satisfaction.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Flexible Booking</h3>
+                    <p>Free cancellation up to 48 hours before departure with full refund.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-compass"></i>
+                        <span>Journii</span>
+                    </div>
+                    <p>Your gateway to extraordinary travel experiences around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li><a href="#">Booking Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@journii.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel St, Adventure City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Journii Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Journii</h2>
+                <button class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="globalSearchInput" placeholder="Search destinations, packages, or pages..." autocomplete="off">
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="cart-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some amazing travel packages to get started!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total: <span class="total-amount">$0.00</span></span>
+                </div>
+                <a href="booking.html" class="btn-primary cart-checkout">
+                    <i class="fas fa-credit-card"></i>
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
