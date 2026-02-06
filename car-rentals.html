@@ -9,31 +9,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
+        <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <div class="logo-ring"></div>
                     <i class="fas fa-compass"></i>
-                    <span>Journii</span>
-                </a>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-main">Journii</div>
+                    <div class="logo-tagline">Travel Beyond</div>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
-                <li><a href="packages.html" class="nav-link">Packages</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
+            
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <!-- Navigation Actions -->
             <div class="nav-actions">
-                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)"><i class="fas fa-search"></i></button>
-                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-                <button class="nav-action-btn cart-trigger" title="Shopping Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button>
+                <button class="nav-action-btn search-trigger" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <button class="nav-action-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="nav-action-btn cart-trigger" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-ghost">Login</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
             </div>
-            <div class="nav-auth">
-                <a href="login.html" class="btn-secondary">Login</a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-nav-links">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="destinations.html" class="mobile-nav-link">Destinations</a>
+                <a href="packages.html" class="mobile-nav-link">Packages</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+            </div>
+            <div class="mobile-auth">
+                <a href="login.html" class="btn-ghost">Login</a>
                 <a href="signup.html" class="btn-primary">Sign Up</a>
             </div>
-            <div class="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
     <!-- Subpage Quick Links Circle Buttons -->
