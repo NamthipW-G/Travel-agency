@@ -643,7 +643,7 @@ img {
 /* .navbar {
   position: fixed;
   top: 0;
-  left: 0;3
+  left: 0;
   right: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.9);
@@ -7609,3 +7609,144 @@ a:focus {
         .hotel-result { flex-direction: column; align-items: flex-start; }
         .hotel-result .btn-primary { margin-left: 0; margin-top: 1em; width: 100%; }
     }
+
+/* ========================================
+   RESPONSIVE FIXES (NAV + HOME HERO)
+   ======================================== */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-container { padding: 0.75rem 1rem; }
+
+  /* Hide desktop links/buttons on mobile */
+  .nav-links,
+  .auth-buttons {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  /* Make action icons a bit tighter */
+  .nav-actions { gap: 0.5rem; }
+
+  .nav-action-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Ensure dropdown menu sits above content */
+  .mobile-menu {
+    z-index: 1200;
+  }
+}
+
+/* Home Hero cleanup (index.html has lots of inline styles, so we use !important) */
+@media (max-width: 768px) {
+  .hero-section { padding-top: 80px !important; }
+
+  .hero-section .hero-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    min-height: auto !important;
+  }
+
+  .hero-section .hero-content > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
+    letter-spacing: -1px !important;
+    margin-top: 1rem !important;
+    padding: 0 1rem !important;
+    text-align: left !important;
+  }
+
+  .hero-badge {
+    align-self: center !important;
+    margin-right: 0 !important;
+  }
+
+  .hero-description {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding: 0 1rem !important;
+    text-align: left !important;
+    font-size: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-actions {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0 1rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Carousel: make it horizontally scrollable instead of forcing fixed widths */
+  .travel-carousel {
+    position: relative !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  .carousel-wrapper {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track {
+    width: max-content !important;
+  }
+
+  .carousel-btn {
+    display: none !important;
+  }
+}
+
+/* Slightly larger phones/tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title { font-size: clamp(3rem, 6vw, 4.5rem) !important; }
+  .travel-carousel { width: 100% !important; right: 0 !important; }
+  .carousel-wrapper { width: 100% !important; }
+}
